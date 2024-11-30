@@ -7,22 +7,46 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            background-image: url('https://example.com/path/to/your/image.jpg'); /* Bild hinzufügen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
+
         .timer {
             text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
+
         p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -31,6 +55,7 @@
         <h1>Zeit seit dem 5. Oktober 2024, 8:00 Uhr</h1>
         <p id="counter">Lade...</p>
     </div>
+
     <script>
         function updateTimer() {
             const startDate = new Date("2024-10-05T08:00:00");
