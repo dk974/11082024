@@ -20,7 +20,7 @@
         header {
             background: url('Snapchat-238578772.jpg') no-repeat center center;
             background-size: cover;
-            height: 50vh;
+            height: 70vh;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -34,6 +34,8 @@
             text-align: center;
             margin: 0;
             padding: 10px;
+            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
+            border-radius: 10px;
         }
 
         .timer {
@@ -52,11 +54,6 @@
         }
 
         @media (max-width: 600px) {
-            header {
-                background-size: cover;
-                background-position: center;
-            }
-
             header h1 {
                 font-size: 1.5rem;
             }
@@ -86,16 +83,3 @@
             const diff = now - startDate;
 
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("counter").textContent =
-                `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-    </script>
-</body>
-</html>
