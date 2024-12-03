@@ -11,6 +11,17 @@
             background-color: #f4f4f9;
             color: #333;
         }
+header {
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 600px) {
+    header {
+        background-size: contain; /* Passt das Bild in kleine Bildschirme */
+        background-position: top; /* Verschiebt Fokus bei Bedarf */
+    }
+}
 
         header {
             position: relative;
