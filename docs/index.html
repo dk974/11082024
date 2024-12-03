@@ -6,56 +6,102 @@
     <title>Zeitzähler</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            background-image: url('https://file:///C:/Users/dario/OneDrive%20-%20Schooldom.net/Bilder/Screenshots/Snapchat-238578772.jpg'); /* Bild hinzufügen */
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background: url('Snapchat-238578772.jpg') no-repeat center center;
             background-size: cover;
-            background-position: center;
-            height: 100vh;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dunkler Overlay-Effekt */
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 50vh;
+            text-align: center;
         }
 
         .timer {
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Halbtransparenter Hintergrund */
-            color: white;
-            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .timer h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1.8rem;
+        .timer p {
+            font-size: 1.5rem;
             margin: 0;
         }
 
         @media (max-width: 600px) {
-            h1 {
+            .header-text h1 {
                 font-size: 1.8rem;
             }
 
-            p {
+            .timer h2 {
                 font-size: 1.5rem;
+            }
+
+            .timer p {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="timer">
-        <h1>Zeit seit dem 5. Oktober 2024, 8:00 Uhr</h1>
-        <p id="counter">Lade...</p>
+    <!-- Header mit Bild -->
+    <header>
+        <div class="header-text">
+            <h1>Unvergessliche Momente</h1>
+        </div>
+    </header>
+
+    <!-- Inhalt mit Zeitzähler -->
+    <div class="content">
+        <div class="timer">
+            <h2>Zeit seit dem 5. Oktober 2024, 8:00 Uhr</h2>
+            <p id="counter">Lade...</p>
+        </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
         function updateTimer() {
             const startDate = new Date("2024-10-05T08:00:00");
