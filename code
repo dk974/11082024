@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeitzähler</title>
+    <title>Zusammen seit</title>
     <style>
         body {
             margin: 0;
@@ -20,7 +20,7 @@
         header {
             background: url('Snapchat-238578772.jpg') no-repeat center center;
             background-size: cover;
-            height: 60vh;
+            height: 50vh;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -30,9 +30,10 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
             margin: 0;
+            padding: 10px;
         }
 
         .timer {
@@ -41,39 +42,38 @@
         }
 
         .timer h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 10px;
         }
 
         .timer p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 0;
         }
 
         @media (max-width: 600px) {
             header {
-                background-size: contain;
-                background-position: top;
+                background-size: cover;
+                background-position: center;
             }
 
             header h1 {
-                font-size: 2rem;
-                padding: 0 10px;
-            }
-
-            .timer h2 {
                 font-size: 1.5rem;
             }
 
+            .timer h2 {
+                font-size: 1.4rem;
+            }
+
             .timer p {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Zeit seit dem 5. Oktober 2024, 8:00 Uhr</h1>
+        <h1>Zusammen seit dem 5. Oktober 2024, 8:00 Uhr</h1>
     </header>
     <div class="timer">
         <h2>Verstrichene Zeit:</h2>
