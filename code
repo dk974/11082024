@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            text-align: center;
         }
 
         header {
@@ -34,12 +35,11 @@
             text-align: center;
             margin: 0;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund für bessere Lesbarkeit */
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
 
         .timer {
-            text-align: center;
             padding: 20px;
         }
 
@@ -70,16 +70,40 @@
 </head>
 <body>
     <header>
-        <h1>Zusammen seit dem 5. Oktober 2024, 8:00 Uhr</h1>
+        <h1>Zusammen seit dem 5. Oktober 2024</h1>
     </header>
     <div class="timer">
         <h2>Verstrichene Zeit:</h2>
         <p id="counter">Lade...</p>
     </div>
     <script>
+        // Funktion zur Aktualisierung des Timers
         function updateTimer() {
+            // Startdatum und aktuelle Zeit
             const startDate = new Date("2024-10-05T08:00:00");
             const now = new Date();
+
+            // Differenz berechnen
             const diff = now - startDate;
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            if (diff >= 0) { // Nur anzeigen, wenn das Datum in der Vergangenheit liegt
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                // Timer-Text aktualisieren
+                document.getElementById("counter").textContent =
+                    `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
+            } else {
+                document.getElementById("counter").textContent =
+                    "Das Startdatum liegt in der Zukunft!";
+            }
+        }
+
+        // Timer alle 1 Sekunde aktualisieren
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Sofort initialisieren
+    </script>
+</body>
+</html>
